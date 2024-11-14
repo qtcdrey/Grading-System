@@ -1,86 +1,68 @@
 #include <stdio.h>
 
 int main() {
-    puts("========================");
-    puts("  Grading System");
-    puts("========================");
-    int qz1, qz2, mp1, mp2, fe, te;
-    float fg = 0,result = 0; 
-    const float grade_point[]={1,1.25,1.5,1.75,2,2.25,2.5,2.75,3,5,0};
-    
+    int quiz_1, quiz_2, mach_proj_1, mach_proj_2, final_exam, teacher_evaluation;
+    float final_grade = 0, result = 0; 
+    const float grade_point[] = { 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 5, 0 };
     printf("Quiz No. 1: ");
-    scanf("%d", &qz1);
+    scanf("%d", &quiz_1);
     printf("Quiz No. 2: ");
-    scanf("%d", &qz2);
+    scanf("%d", &quiz_2);
     printf("Mach. Proj. 1: ");
-    scanf("%d", &mp1);
+    scanf("%d", &mach_proj_1);
     printf("Mach. Proj. 2: ");
-    scanf("%d", &mp2);
+    scanf("%d", &mach_proj_2);
     printf("Final Exam: ");
-    scanf("%d", &fe);
+    scanf("%d", &final_exam);
     printf("Teacher's Eval. : ");
-    scanf("%d", &te);
-
-    fg = .50*((qz1+qz2)/2)+.15*((mp1+mp2)/2)+.3*fe+.05*te;
-    
-    printf("\n");
-    puts("========================");
-    puts("  Result");
-    puts("========================");
-    if (fg >= 99 && fg <= 100) {
+    scanf("%d", &teacher_evaluation);
+    final_grade = .50*((quiz_1+quiz_2)/2)+.15*((mach_proj_1+mach_proj_2)/2)+.3*final_exam+.05*teacher_evaluation;
+    puts("\nResult:");
+    if (final_grade >= 99 && final_grade <= 100) {
         puts("Excellent");
         puts("A+");
         result = grade_point[0];
-    }
-    else if (fg >= 96 && fg <= 98) {
+    } else if (final_grade >= 96 && final_grade <= 98) {
         puts("Very Good");
         puts("A");
         result = grade_point[1];
-    }
-    else if (fg >= 93 && fg <= 95) {
+    } else if (final_grade >= 93 && final_grade <= 95) {
         puts("Very Good");
         puts("A-");
         result = grade_point[2];
-    }
-    else if (fg >= 90 && fg <= 92) {
+    } else if (final_grade >= 90 && final_grade <= 92) {
         puts("Good");
         puts("B+");
         result = grade_point[3];
-    }
-    else if (fg >= 87 && fg <= 89) {
+    } else if (final_grade >= 87 && final_grade <= 89) {
         puts("Good");
         puts("B");
         result = grade_point[4];
-    }
-    else if (fg >= 84 && fg <= 86) {
+    } else if (final_grade >= 84 && final_grade <= 86) {
         puts("Satisfactory");
         puts("B-");
         result = grade_point[5];
-    }
-    else if (fg >= 81 && fg <= 83) {
+    } else if (final_grade >= 81 && final_grade <= 83) {
         puts("Satisfactory");
         puts("C+");
         result = grade_point[6];
-    }
-    else if (fg >= 78 && fg <= 80) {
+    } else if (final_grade >= 78 && final_grade <= 80) {
         puts("Pass");
         puts("C");
         result = grade_point[7];
-    }
-    else if (fg >= 75 && fg <= 77.74) {
+    } else if (final_grade >= 75 && final_grade <= 77.74) {
         puts("Pass");
         puts("C-");
         result = grade_point[8];
-    }
-    else if (fg <= 74.99) {
+    } else if (final_grade <= 74.99) {
         puts("Fail");
         puts("F");
         result = grade_point[9];
-    }
-    else {
+    } else {
         puts("Invalid");
         result = grade_point[10];
     }
-    printf("Final Grade: %.2f",fg);
-    printf("\nGrade Point: %.2f",result);
+    printf("Final Grade: %.2f", final_grade);
+    printf("\nGrade Point: %.2f", result);
+    puts("\n");
 }
