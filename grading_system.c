@@ -16,7 +16,10 @@ int main() {
     scanf("%d", &final_exam);
     printf("Teacher's Eval. : ");
     scanf("%d", &teacher_evaluation);
-    final_grade = .50*((quiz_1+quiz_2)/2)+.15*((mach_proj_1+mach_proj_2)/2)+.3*final_exam+.05*teacher_evaluation;
+    final_grade =   .50*((quiz_1+quiz_2)/2)+
+                    .15*((mach_proj_1+mach_proj_2)/2)+
+                    .3*final_exam+
+                    .05*teacher_evaluation;
     puts("\nResult:");
     if (final_grade >= 99 && final_grade <= 100) {
         puts("Excellent");
@@ -65,4 +68,5 @@ int main() {
     printf("Final Grade: %.2f", final_grade);
     printf("\nGrade Point: %.2f", result);
     puts("\n");
+    return 0;
 }
