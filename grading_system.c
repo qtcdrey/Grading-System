@@ -1,23 +1,23 @@
 #include <stdio.h>
 
 int main() {
-    int quiz_1, quiz_2, mach_proj_1, mach_proj_2, final_exam, teacher_evaluation;
+    int quiz[2], mach_proj[2], final_exam, teacher_evaluation;
     float final_grade = 0, result = 0; 
     const float grade_point[] = { 1, 1.25, 1.5, 1.75, 2, 2.25, 2.5, 2.75, 3, 5, 0 };
-    printf("Quiz No. 1: ");
-    scanf("%d", &quiz_1);
-    printf("Quiz No. 2: ");
-    scanf("%d", &quiz_2);
-    printf("Mach. Proj. 1: ");
-    scanf("%d", &mach_proj_1);
-    printf("Mach. Proj. 2: ");
-    scanf("%d", &mach_proj_2);
-    printf("Final Exam: ");
+    for (int i=1; i<=2; i++) {
+        printf("Quiz No. %i     => ",i);
+        scanf("%i", &quiz[i]);
+	}
+	for (int i=1; i<=2; i++) {
+        printf("Mach. Proj. %i  => ",i);
+        scanf("%i", &mach_proj[i]);
+	}
+    printf("Final Exam     => ");
     scanf("%d", &final_exam);
-    printf("Teacher's Eval. : ");
+    printf("Teacher's Eval.=> ");
     scanf("%d", &teacher_evaluation);
-    final_grade =   .50*((quiz_1+quiz_2)/2)+
-                    .15*((mach_proj_1+mach_proj_2)/2)+
+    final_grade =   .50*((quiz[1]+quiz[2])/2)+
+                    .15*((mach_proj[1]+mach_proj[2])/2)+
                     .3*final_exam+
                     .05*teacher_evaluation;
     puts("\nResult:");
